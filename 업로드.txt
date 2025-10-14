@@ -1,0 +1,3 @@
+git add .
+git commit -m "edit project info"
+git push
