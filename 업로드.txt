@@ -1,3 +1,26 @@
+
+### - 초기설정 - ###
+# 1) SSH 키 생성 (이미 있으면 생략)
+ssh-keygen -t ed25519 -C "dlrldnjs@kaist.ac.kr"
+# => 기본 경로(~/.ssh/id_ed25519)로 엔터 엔터
+
+# 2) 에이전트에 등록
+ssh-add ~/.ssh/id_ed25519
+
+# 3) 공개키 출력해서 복사
+cat ~/.ssh/id_ed25519.pub
+
+# 4) 연결 테스트
+ssh -T git@github.com
+# "Hi GiwonLee00!" 나오면 OK
+
+# 5) 원격 URL을 SSH로 바꾸기
+git remote set-url origin git@github.com:vrdriveneurips/vrdriveneurips.github.io.git
+
+# 6) 푸시
+git push
+
+### - 지금은 이렇게 업로드 - ###
 git add .
 git commit -m "edit project info"
 git push
